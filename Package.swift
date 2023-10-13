@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.8.0-9"
+let bnbPackageVersion: Version = "1.8.0-10"
 
 let package = Package(
     name: "BNBFaceTracker",
@@ -13,9 +13,9 @@ let package = Package(
             name: "BNBFaceTracker",
             targets: [
                 "BNBFaceTracker",
-                "BNBFaceTrackerBNBSdkCore",
-                "BNBFaceTrackerBNBEffectPlayer",
-                "BNBFaceTrackerBNBScripting"
+                "BNBSdkCore",
+                "BNBEffectPlayer",
+                "BNBScripting"
             ]
         ),
     ],
@@ -38,33 +38,6 @@ let package = Package(
             name: "BNBFaceTracker",
             url: "https://d2cm7wtcqqw29.cloudfront.net/1.8.0-58-g46079e7d74/BNBFaceTracker.zip",
             checksum: "2fb17031ce6a0659819dea411dcbf574e8082361f14630494017f1568ccea802"
-        ),
-        .target(
-            name: "BNBFaceTrackerBNBSdkCore",
-            dependencies: [
-                .product(
-                    name: "BNBSdkCore",
-                    package: "BNBSdkCore"
-                ),
-            ]
-        ),
-        .target(
-            name: "BNBFaceTrackerBNBEffectPlayer",
-            dependencies: [
-                .product(
-                    name: "BNBEffectPlayer",
-                    package: "BNBEffectPlayer"
-                ),
-            ]
-        ),
-        .target(
-            name: "BNBFaceTrackerBNBScripting",
-            dependencies: [
-                .product(
-                    name: "BNBScripting",
-                    package: "BNBScripting"
-                ),
-            ]
         ),
     ]
 )
